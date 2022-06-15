@@ -1,0 +1,128 @@
+{
+    "name": "laravel/laravel",
+    "type": "project",
+    "description": "The Laravel Framework.",
+    "keywords": [
+        "framework",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "ext-json": "*",
+        "platform/admin": "^2.1",
+        "platform/cbs-accounting": "^1.3",
+        "platform/cbs-api-provider": "^1.2",
+        "platform/cbs-commission": "^1.2",
+        "platform/cbs-product-rating": "^1.2",
+        "platformreport/core": "@dev",
+        "platformreport/laravel": "@dev",
+        "platformreport/pro": "@dev",
+        "encore/laravel-admin": "1.8.13",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "intervention/image": "^2.7",
+        "laravel-admin-ext/api-tester": "^1.0",
+        "laravel-admin-ext/config": "^1.1",
+        "laravel-admin-ext/log-viewer": "^1.0",
+        "laravel/framework": "^8.12",
+        "laravel/passport": "^10.0",
+        "laravel/tinker": "^2.5",
+        "maatwebsite/excel": "^3.1",
+        "niklasravnsborg/laravel-pdf": "^4.0",
+        "pusher/pusher-php-server": "^4.1",
+        "spomky-labs/base64url": "^1.0",
+        "sierracloud/sierracloud-sdk-php": "^3.0",
+        "web-token/jwt-framework": "2.2.11",
+        "webklex/laravel-imap": "^2.4"
+    },
+    "require-dev": {
+        "beyondcode/laravel-dump-server": "^1.6",
+        "filp/whoops": "^2.9",
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "mockery/mockery": "^1.4.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "repositories":[
+        { "type": "path", "url": "packages/platformreport/core" },
+        { "type": "path", "url": "packages/platformreport/amazing" },
+        { "type": "path", "url": "packages/platformreport/barcode" },
+        { "type": "path", "url": "packages/platformreport/bootstrap3" },
+        { "type": "path", "url": "packages/platformreport/bootstrap4" },
+        { "type": "path", "url": "packages/platformreport/cache" },
+        { "type": "path", "url": "packages/platformreport/chartjs" },
+        { "type": "path", "url": "packages/platformreport/cleandata" },
+        { "type": "path", "url": "packages/platformreport/cloudexport" },
+        { "type": "path", "url": "packages/platformreport/codeigniter" },
+        { "type": "path", "url": "packages/platformreport/cube" },
+        { "type": "path", "url": "packages/platformreport/d3" },
+        { "type": "path", "url": "packages/platformreport/datagrid" },
+        { "type": "path", "url": "packages/platformreport/drilldown" },
+        { "type": "path", "url": "packages/platformreport/excel" },
+        { "type": "path", "url": "packages/platformreport/export" },
+        { "type": "path", "url": "packages/platformreport/inputs" },
+        { "type": "path", "url": "packages/platformreport/instant" },
+        { "type": "path", "url": "packages/platformreport/laravel" },
+        { "type": "path", "url": "packages/platformreport/yii2" },
+        { "type": "path", "url": "packages/platformreport/morris_chart" },
+        { "type": "path", "url": "packages/platformreport/pivot" },
+        { "type": "path", "url": "packages/platformreport/querybuilder" },
+        { "type": "path", "url": "packages/platformreport/sparklines" },
+        { "type": "path", "url": "packages/platformreport/statistics" },
+        { "type": "path", "url": "packages/platformreport/pro" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_laravel8_admin" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_report_builder" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_api_provider" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_accounting" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_card" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_commission" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_payment" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_product" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_product_rating" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_subscription" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_user_management" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cbs_invoice" },
+        { "type": "vcs", "url": "ssh://git@git.ssd-tech.local:22311/platform_cms" }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/"
+        },
+        "classmap": [
+            "database/seeds",
+            "database/factories"
+        ]
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}

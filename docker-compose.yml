@@ -1,0 +1,74 @@
+version: '3'
+
+networks:
+  platform:
+
+services:
+  #Nginx Service
+  nginx:
+    image: nginx
+    container_name: platform-nginx
+    restart: unless-stopped
+    tty: true
+    depends_on:
+      - mysql
+      - php
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www
+      - ./nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+    networks:
+      - platform
+
+  #MySQL Service
+  mysql:
+    image: mysql:8.0.23
+    container_name: platform-mysql
+    restart: unless-stopped
+    tty: true
+    ports:
+      - "4406:3306"
+    environment:
+      MYSQL_DATABASE: platform_framework_db
+      MYSQL_USER: platform_framework_user
+      MYSQL_PASSWORD: vv7nY34gRrTf7Snw
+      MYSQL_ROOT_PASSWORD: Qj4Lk9BLzVAyB4qs
+      SERVICE_TAGS: dev
+      SERVICE_NAME: mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    networks:
+      - platform
+
+  #PHP Service
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    #image: platform/php
+    container_name: platform-php
+    volumes:
+      - ./:/var/www
+    #restart: unless-stopped
+    #depends_on:
+    #  - db
+    tty: true
+    #environment:
+    #  SERVICE_NAME: app
+    #  SERVICE_TAGS: dev
+    #working_dir: /var/www
+    networks:
+      - platform
+
+
+#Docker Networks
+#networks:
+#  platform:
+#  app-network:
+#    driver: bridge
+
+#Volumes
+volumes:
+  dbdata:
+    driver: local
